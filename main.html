@@ -10,17 +10,19 @@
 	<script>
 		function secondHighest(arr) {
 			//Write your code here
-			let first = 0;
-			let second = 0;
+			let first ;
+			let second;
 			let same = arr[0];
 			let count = 1;
 			let n = arr.length;
-			
+
+		// 1st condition
 			if(arr.length == 0 || arr.length == 1)
 			{
 				return -Infinity;
 			}
-			
+
+		// 2nd condition
 			if(arr.length>1){
 			
 				for(let i=1; i<n; i++)
@@ -33,9 +35,26 @@
 			    if(count == n)
 				{
 					return -Infinity;
-				} 
+				}
+
+				else{
+					
+					for(let i=0; i<n; i++)
+					{
+						if(arr[i]>first)
+						{
+							second = first;
+							first=arr[i];
+						}
+					else if(arr[i]!=first && arr[i]>second)
+					{
+						second = arr[i];
+					}
+					}
+				return second;
 			}  
-			
+
+		
 		} 
 
 		function Main() {
@@ -45,7 +64,7 @@
 				arr[i] = prompt("Enter element " + (i+1));
 			}
 			alert(secondHighest(arr));
-		} 
+		}  
 		Main();
 	</script>
 
