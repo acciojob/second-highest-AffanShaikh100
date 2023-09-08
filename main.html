@@ -12,16 +12,31 @@
 			//Write your code here
 			let first = 0;
 			let second = 0;
+			let same = arr[0];
+			let count = 1;
+			let n = arr.length;
+			
 			if(arr.length == 0 || arr.length == 1)
 			{
 				return -Infinity;
 			}
-			// for(let i=0; i<n; i++)
-			// 	{
-					
-			// 	} 
 			
-		}
+			if(arr.length>1){
+			
+				for(let i=1; i<n; i++)
+				{
+					if(same==arr[i])
+					{
+						count++;
+					}
+			    }
+			    if(count == n)
+				{
+					return -Infinity;
+				} 
+			}  
+			
+		} 
 
 		function Main() {
 			var n = prompt("Enter the number of elements");
@@ -30,7 +45,7 @@
 				arr[i] = prompt("Enter element " + (i+1));
 			}
 			alert(secondHighest(arr));
-		}
+		} 
 		Main();
 	</script>
 
